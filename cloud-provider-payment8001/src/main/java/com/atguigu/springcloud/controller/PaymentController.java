@@ -4,7 +4,6 @@ import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +32,7 @@ public class PaymentController {
         return new CommonResult(444, "失败", null);
     }
 
-    @GetMapping(value = "/payment/get/${id}")
+    @GetMapping(value = "/payment/get/{id}")
     public CommonResult create(@PathVariable("id") String id) {
         Payment payment = paymentService.getPaymentById(id);
         log.info("*****查询结果：" + payment);
