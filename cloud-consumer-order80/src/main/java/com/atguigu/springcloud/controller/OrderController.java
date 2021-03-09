@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @RestController//@ResponseBody和@Controller合体
 @Slf4j//日志
 public class OrderController {
-    public static final String PATH_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://localhost:8001";
 
     @Resource
     private RestTemplate restTemplate;
@@ -25,12 +25,12 @@ public class OrderController {
     @GetMapping("/consumer/payment/create")
     public CommonResult<Payment> createPayment(Payment payment) {
         log.info("++++++++++++++++++++++++++++");
-        return restTemplate.postForObject(PATH_URL + "/payment/create", payment, CommonResult.class);
+        return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }
 
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") String id) {
-        return restTemplate.getForObject(PATH_URL + "/payment/get/" + id, CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
 
 }
