@@ -26,3 +26,8 @@ eureka:
       #defaultZone: http://localhost:7001/eureka/
       #集群版
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    #修改注册eureka上的主机名称
+    instance-id: payment8001
+    #开启ip显示,这个功能需要加载actuator包
+    prefer-ip-address: true
