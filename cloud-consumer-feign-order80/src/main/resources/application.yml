@@ -6,3 +6,14 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+ribbon:
+  #open feign 默认等待1秒，可以自定义最大等待时间
+  #最大读取时间
+  ReadTimeout: 5000
+  #最大超时时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    #Feign日志，以什么级别监控哪个接口
+    com.atguigu.springcloud.service.PaymentFeignService: debug
