@@ -12,3 +12,7 @@ ribbon:
   ReadTimeout: 3000
   #最大超时时间
   ConnectTimeout: 3000
+#feign使用hystrix
+feign:
+  hystrix:
+    enabled: true
