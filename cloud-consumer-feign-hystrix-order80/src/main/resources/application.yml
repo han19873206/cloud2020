@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+ribbon:
+  #open feign 默认等待1秒，可以自定义最大等待时间
+  #最大读取时间
+  ReadTimeout: 3000
+  #最大超时时间
+  ConnectTimeout: 3000
